@@ -4,10 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>io.hawt</groupId>
-    <artifactId>project</artifactId>
-    <version>4.0-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
+    <groupId>io.hawt.examples</groupId>
+    <artifactId>hawtio-examples</artifactId>
+    <version>4.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>hawtio-example-war-plugin</artifactId>
@@ -24,7 +23,7 @@
     <dependency>
       <groupId>io.hawt</groupId>
       <artifactId>hawtio-plugin-mbean</artifactId>
-      <version>${project.version}</version>
+      <version>${hawtio-version}</version>
     </dependency>
 
     <!--
@@ -42,7 +41,7 @@
     <dependency>
       <groupId>io.hawt</groupId>
       <artifactId>hawtio-war</artifactId>
-      <version>${project.version}</version>
+      <version>${hawtio-version}</version>
       <scope>provided</scope>
       <type>war</type>
     </dependency>
@@ -82,7 +81,7 @@
                 <artifactItem>
                   <groupId>io.hawt</groupId>
                   <artifactId>hawtio-war</artifactId>
-                  <version>${project.version}</version>
+                  <version>${hawtio-version}</version>
                   <type>war</type>
                   <outputDirectory>${project.build.directory}/deploy</outputDirectory>
                   <destFileName>hawtio.war</destFileName>

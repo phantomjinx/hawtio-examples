@@ -3,18 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.jboss</groupId>
-    <artifactId>jboss-parent</artifactId>
-    <version>41</version>
+    <groupId>io.hawt</groupId>
+    <artifactId>project</artifactId>
+    <version>4.0-beta-1</version>
   </parent>
 
-  <groupId>io.hawt</groupId>
-  <artifactId>project</artifactId>
+  <groupId>io.hawt.examples</groupId>
+  <artifactId>hawtio-examples</artifactId>
   <packaging>pom</packaging>
-  <version>4.0-SNAPSHOT</version>
-  <name>hawtio-java-project</name>
-  <description>Hawtio :: project</description>
-  <url>https://hawt.io/</url>
+  <version>4.0.0-SNAPSHOT</version>
+  <name>Hawtio Examples</name>
+  <description>Hawtio :: Examples</description>
 
   <licenses>
     <license>
@@ -24,29 +23,11 @@
     </license>
   </licenses>
 
-  <scm>
-    <connection>scm:git:git@github.com:hawtio/hawtio.git</connection>
-    <developerConnection>scm:git:git@github.com:hawtio/hawtio.git</developerConnection>
-    <url>git@github.com:hawtio/hawtio.git</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>oss-sonatype-staging</id>
-      <name>Sonatype Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-    <snapshotRepository>
-      <id>oss-sonatype-snapshots</id>
-      <name>OSS Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <hawtio-version>4.0-beta-1</hawtio-version>
 
     <!-- Versions for major components -->
     <!-- Jolokia -->
@@ -99,22 +80,10 @@
   </properties>
 
   <modules>
-    <module>bom</module>
-    <module>console</module>
-    <module>deploy/hawtio-default</module>
-    <module>deploy/hawtio-embedded</module>
-    <module>examples/quarkus</module>
-    <module>examples/quarkus-keycloak</module>
-    <module>examples/sample-plugin</module>
-    <module>examples/war-plugin</module>
-    <module>hawtio-jbang</module>
-    <module>hawtio-plugin-mbean</module>
-    <module>hawtio-system</module>
-    <module>hawtio-war</module>
-    <module>platforms/quarkus</module>
-    <module>plugins/hawtio-local-jvm-mbean</module>
-    <module>plugins/hawtio-log-logback</module>
-    <module>plugins/hawtio-log</module>
+    <module>quarkus</module>
+    <module>quarkus-keycloak</module>
+    <module>sample-plugin</module>
+    <module>war-plugin</module>
   </modules>
 
   <build>
@@ -279,13 +248,12 @@
         <jdk>[17,)</jdk>
       </activation>
       <modules>
-        <module>examples/springboot</module>
-        <module>examples/springboot-authentication</module>
-        <module>examples/springboot-keycloak</module>
-        <module>examples/springboot-log4j2</module>
-        <module>examples/springboot-plugin</module>
-        <module>examples/springboot-security</module>
-        <module>platforms/springboot</module>
+        <module>springboot</module>
+        <module>springboot-authentication</module>
+        <module>springboot-keycloak</module>
+        <module>springboot-log4j2</module>
+        <module>springboot-plugin</module>
+        <module>springboot-security</module>
       </modules>
     </profile>
 
@@ -295,82 +263,6 @@
         <skipTests>true</skipTests>
         <skip.yarn>true</skip.yarn>
       </properties>
-    </profile>
-
-    <profile>
-      <id>e2e</id>
-      <modules>
-        <module>tests</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>release</id>
-      <!--
-      TODO when using the release profile you should add your ~/.m2/settings.xml something like this:
-
-      <settings>
-        <profiles>
-          <profile>
-            <id>release</id>
-            <properties>
-              <gpg.passphrase>MyPassPhrase</gpg.passphrase>
-            </properties>
-          </profile>
-          ...
-      -->
-
-      <!--
-        Run the release /w the -P release flag to enable the release profile.
-      -->
-      <build>
-        <plugins>
-          <!-- We want to sign the artifact, the POM, and all attached artifacts -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <!--suppress UnresolvedMavenProperty -->
-              <passphrase>${gpg.passphrase}</passphrase>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <encoding>${project.build.sourceEncoding}</encoding>
-              <doclint>none</doclint>
-            </configuration>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
   </profiles>
 
