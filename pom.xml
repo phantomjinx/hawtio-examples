@@ -2,12 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>io.hawt</groupId>
-    <artifactId>project</artifactId>
-    <version>4.0-beta-1</version>
-  </parent>
-
   <groupId>io.hawt.examples</groupId>
   <artifactId>hawtio-examples</artifactId>
   <packaging>pom</packaging>
@@ -27,16 +21,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <hawtio-version>4.0-beta-1</hawtio-version>
+    <hawtio-version>4.0.0.redhat-00032</hawtio-version>
 
     <!-- Versions for major components -->
     <!-- Jolokia -->
     <jolokia-version>2.0.0</jolokia-version>
     <!-- Quarkus -->
-    <quarkus-version>3.6.1</quarkus-version>
+    <quarkus-version>3.2.9.Final-redhat-00003</quarkus-version>
+    <quarkus-extension-version>3.2.9.Final-redhat-00002</quarkus-extension-version>
     <!-- Spring -->
-    <spring-version>6.1.1</spring-version>
-    <spring-boot-version>3.1.5</spring-boot-version>
+    <spring-version>6.0.14</spring-version>
+    <spring-boot-version>3.1.6</spring-boot-version>
     <!-- Jetty -->
     <jetty-version>11.0.18</jetty-version>
     <!-- Keycloak -->
@@ -266,13 +261,59 @@
     </profile>
   </profiles>
 
-  <!-- Only when testing a staged release of new Jolokia version
   <repositories>
+    <repository>
+      <id>redhat-ga-repository</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>redhat-ea</id>
+      <name>Red Hat EA Repository</name>
+      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <!-- Only when testing a staged release of new Jolokia version
     <repository>
       <id>orgjolokia-1074</id>
       <url>https://oss.sonatype.org/content/repositories/orgjolokia-1074/</url>
     </repository>
+    -->
   </repositories>
-  -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>redhat-ga-repository</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>redhat-ea</id>
+      <name>Red Hat EA Repository</name>
+      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>

@@ -1,8 +1,9 @@
 {
   "branding": {
     "appName": "Hawtio Spring Boot 3 Authentication Example",
-    "appLogoUrl": "img/hawtio-logo.svg",
-    "companyLogoUrl": "img/hawtio-logo.svg",
+    "showAppName": true,
+    "appLogoUrl": "img/Logo-Red_Hat-build_of_Apache_Camel-Standard-RGB.svg",
+    "companyLogoUrl": "img/Logo-RedHat-A-Reverse-RGB.png",
     "css": "css/app.css",
     "favicon": "img/favicon.ico"
   },
@@ -27,8 +28,8 @@
     "title": "Hawtio Spring Boot 3 Authentication Example",
     "productInfo": [],
     "additionalInfo": "",
-    "copyright": "(c) 2023 Hawtio team",
-    "imgSrc": "img/hawtio-logo.svg"
+    "copyright": "© Hawtio project & Red Hat",
+    "imgSrc": "img/Logo-RedHat-A-Reverse-RGB.png"
   },
   "disabledRoutes": []
 }

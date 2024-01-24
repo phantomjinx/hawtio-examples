@@ -21,14 +21,14 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>io.quarkus.platform</groupId>
+        <groupId>com.redhat.quarkus.platform</groupId>
         <artifactId>quarkus-bom</artifactId>
         <version>${quarkus-version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.quarkus.platform</groupId>
+        <groupId>com.redhat.quarkus.platform</groupId>
         <artifactId>quarkus-camel-bom</artifactId>
         <version>${quarkus-version}</version>
         <type>pom</type>
@@ -37,7 +37,7 @@
       <dependency>
         <groupId>io.hawt</groupId>
         <artifactId>hawtio-bom</artifactId>
-        <version>${hawtio-version}</version>
+        <version>${project.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -138,7 +138,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>io.quarkus.platform</groupId>
+        <groupId>com.redhat.quarkus.platform</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus-version}</version>
         <extensions>true</extensions>
