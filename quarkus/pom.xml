@@ -37,7 +37,7 @@
       <dependency>
         <groupId>io.hawt</groupId>
         <artifactId>hawtio-bom</artifactId>
-        <version>${project.version}</version>
+        <version>${hawtio-version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
