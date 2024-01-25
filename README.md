@@ -1,5 +1,7 @@
 # Red Hat build of HawtIO Examples
 
+[![Build](https://github.com/jboss-fuse/hawtio-examples/actions/workflows/build.yml/badge.svg?branch=hawtio-4.0.0-product)](https://github.com/jboss-fuse/hawtio-examples/actions/workflows/build.yml)
+
 | Example | Description |
 |---------|-------------|
 | [Camel JBang](camel-jbang/) | This example demonstrates how you can use Hawtio with Camel JBang. |
