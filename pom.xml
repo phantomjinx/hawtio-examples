@@ -21,7 +21,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <hawtio-version>4.0.0.redhat-00032</hawtio-version>
+    <hawtio-version>4.0.0.redhat-00034</hawtio-version>
 
     <!-- Versions for major components -->
     <!-- Jolokia -->
@@ -72,6 +72,7 @@
     <maven-release-plugin-version>3.0.1</maven-release-plugin-version>
     <maven-resources-plugin-version>2.6</maven-resources-plugin-version>
     <maven-surefire-plugin-version>3.2.2</maven-surefire-plugin-version>
+    <maven-war-plugin-version>3.4.0</maven-war-plugin-version>
   </properties>
 
   <modules>
@@ -210,6 +211,10 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${maven-war-plugin-version}</version>
         </plugin>
         <plugin>
           <groupId>com.github.eirslett</groupId>
