@@ -1,0 +1,25 @@
+name: Audit
+
+on:
+  schedule:
+    # Run it every Sunday
+    - cron: '0 0 * * 0'
+
+env:
+  MVN_ARGS: --batch-mode --no-transfer-progress
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+          cache: 'maven'
+      - name: Audit
+        run: |
+          mvn ${MVN_ARGS} install -pl sample-plugin
