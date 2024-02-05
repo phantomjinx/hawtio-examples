@@ -11,6 +11,7 @@ on:
       - hawtio-4.0.0-product
     paths-ignore:
       - "**.md"
+  workflow_dispatch:
 
 env:
   MVN_ARGS: --batch-mode --no-transfer-progress
