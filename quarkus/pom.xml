@@ -30,7 +30,7 @@
       <dependency>
         <groupId>com.redhat.quarkus.platform</groupId>
         <artifactId>quarkus-camel-bom</artifactId>
-        <version>${quarkus-version}</version>
+        <version>${camel-quarkus-version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
